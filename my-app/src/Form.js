@@ -1,20 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import './Formulaire.css';
 
-function Form() {
+function Formulaire() {
   return (
-    <Form>
+    <div className= "formulaire2" >
+    <Form className="formulaire2" >
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Label className="mb-3" >Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" className="formumaire2"  />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Label className="mb-3" >Password</Form.Label>
+        <Form.Control type="password" placeholder="Password" className="formumaire2" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
@@ -23,7 +25,8 @@ function Form() {
         Submit
       </Button>
     </Form>
+    </div>
   );
 }
 
-export default Form;
+export default Formulaire;

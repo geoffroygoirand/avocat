@@ -10,4 +10,4 @@ mongoose.connect('mongodb+srv://ggoirand:ggoirand@cluster0.j5gbjjx.mongodb.net/?
     options,
     function(err){
         console.log(err);
-    }
+    })
