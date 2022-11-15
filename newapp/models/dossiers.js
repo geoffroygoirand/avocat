@@ -5,11 +5,6 @@ const mongoose = require('mongoose');
  
 // heures d'ouverture
 
-var SpecialiteSchema = mongoose.Schema({
-    Dayclosed: String,
-    HeuresOuverts: Number,
-    Heuresfermes: Number, 
-   });
 
 // commercants
 var dossiersSchema = mongoose.Schema({
@@ -20,7 +15,6 @@ var dossiersSchema = mongoose.Schema({
     email: String,
     password:String,
     address:String, 
-    specialite: [SpecialiteSchema ],
 
   });
   
