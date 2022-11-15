@@ -6,6 +6,23 @@ import {useState} from 'react';
 function Formulaire() {
  const [email, setEmail] = useState(""); 
  const [password, setPassword] = useState(""); 
+
+ var handleSubmitSignUp = async () => {
+    var res = await fetch("http://172.16.189.14:3000/sign-up", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `email=${signupEmail}&pwd=${signupPwd}&username=${signupUserName}&phonenumber=${signupPhoneNumber}&address=${signupAddress}`,
+    });
+    res = await res.json();
+    if (res.isLogin) {
+      AsyncStorage.setItem("userID", res.userID);
+      props.navigation.navigate("Home");
+    } else {
+      setErrorMessage(res.errorMessage);
+     
+    }
+  };
+
   return (
     <div className= "formulaire2" >
     <Form className="formulaire2" >
@@ -24,7 +41,7 @@ function Formulaire() {
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onPress={handleSubmitSignUp}>
         Submit
       </Button>
     </Form>
